@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="site-title">
+    <a href="{{url_for('showComplaints')}}">
+      <h1 class="title-text">CITY COMPLAINTS</h1>
+    </a>
+  </div>
+  {% if 'username' not in session %}
+  <a href="{{url_for('showLogin')}}" class="top-login-button">
+        <button type="button" class="login-button">
+        Log In
+        </button>
+      </a> {% else %}
+  <a href="{{url_for('gdisconnect')}}" class="top-login-button">
+        <button type="button" class="login-button">
+        Logout
+        </button>
+      </a> {% endif %}
+</div>
+<div class="toolbar">
+  {% if 'username' not in session %} {% else %}
+  <ul class="site-tools">
+    <li><a href="{{url_for('addItem')}}">Add Item</a></li>
+    <li><a href="{{url_for('addCategory')}}">Add Category</a></li>
+  </ul>
+  {% endif %}
+</div>
+</div>

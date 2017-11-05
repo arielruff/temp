@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Category Items{% endblock title %} {% block content %} {% include "nav.html" %}
+{% include "flash.html" %}
+
+<!-- Page Content -->
+<section id="showItem" class="section">
+    {% include "categories.html" %}
+    <div class="latest-list">
+        <h6 class="">Items (<strong>{{count}}</strong>)</h6>
+        {% for i in items %}
+        <a href="{{url_for('showItem', category_name = i.category.name, item_name = i.name)}}">
+            <h4>{{ i.name }}</h4>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

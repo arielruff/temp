@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Complaints{% endblock title %} {% block content %} {% include "nav.html" %} {% include
+"flash.html" %}
+
+
+<section id="complaints" class="section">
+
+
+
+    {% include "categories.html" %}
+
+    <div class="latest-list">
+        <h4 class="complaint-list-title">Latest Complaints</h4>
+        {% for i in items %}
+
+
+        <a href="{{url_for('showItem', category_name = i.category.name, item_name = i.name)}}">
+            <h4>{{ i.name }}</h4>
+            <h6 class="pull-right">Last update: {{ i.date.strftime("%-d-%b-%Y at %I:%M %p") }}</h6>
+            <h6>({{ i.category.name }})</h6>
+        </a>
+
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

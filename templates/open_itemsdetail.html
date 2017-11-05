@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}{{ item.name }}{% endblock title %} {% block content %} {% include "nav.html"
+%} {% include "flash.html" %}
+
+<!-- Page Content -->
+<section id="itemDetail" class="section">
+    {% include "categories.html" %}
+    <div class="latest-list">
+        <div class="caption-full">
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description }}</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

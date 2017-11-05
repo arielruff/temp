@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %} {% include "nav.html" %} {% include "flash.html" %}
+
+<!-- Page Content -->
+{% include "categories.html" %}
+<section id="itemDetail" class="section">
+    <div class="single-item">
+        <div class="item-tools">
+            <h6 class="item-delete">
+                <a href="{{url_for('deleteItem', category_name = item.category.name, item_name = item.name)}}">Delete</a>
+            </h6>
+            <h6 class="item-edit">
+                <a href="{{url_for('editItem', category_name = item.category.name, item_name = item.name)}}">Edit</a>
+            </h6>
+        </div>
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.description }}</p>
+    </div>
+</section>
+
+{% endblock %}

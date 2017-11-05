@@ -1,0 +1,11 @@
+<section id="showCategories">
+    <div class="cat-left">
+        <p class="cat-head">Complaint Types</p>
+        <div class="complaint-type-list">
+            {% for c in categories %}
+            <a href="{{url_for('showCategory', category_name = c.name,)}}" class="list-group-item">{{ c.name }}</a>
+            </br>
+            {% endfor %}
+        </div>
+    </div>
+</section>

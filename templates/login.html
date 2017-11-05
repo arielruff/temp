@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %}Login{% endblock title %} {% block content %} {% include "nav.html" %} {% if 'username'
+not in session %}
+<section id="login" class="section">
+  <div class="login">
+    <p>Sign in:</p>
+    <!--google signin-->
+    <div id="signInButton">
+      <span class="g-signin" data-scope="openid email" data-clientid="INSERT YOUR OWN CLIENT ID HERE"
+        data-redirecturi="postmessage" data-accesstype="offline" data-cookiepolicy="single_host_origin" data-callback="signInCallback"
+        data-approvalprompt="force">
+                  </span>
+    </div>
+    <!--/google signin-->
+  </div>
+</section>
+
+<section id="login-success" class="section">
+  <div id="result"></div>
+</section>
+{% else %} {% endif %} {% endblock %}
